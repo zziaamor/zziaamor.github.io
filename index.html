@@ -209,7 +209,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/json常用方法/">json常用方法</a>
+      <a class="article-title" href="/2016/03/17/json常用方法/">JSON常用方法</a>
     </h1>
   
 
@@ -219,7 +219,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
-<h2 id="三级联动问题中的多个name问题"><a href="#三级联动问题中的多个name问题" class="headerlink" title="三级联动问题中的多个name问题"></a>三级联动问题中的多个name问题</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><pre><code>var all=[
+<h2 id="三级联动问题中的多个NAME问题"><a href="#三级联动问题中的多个NAME问题" class="headerlink" title="三级联动问题中的多个NAME问题"></a>三级联动问题中的多个NAME问题</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><pre><code>var all=[
 
       { &quot;name&quot;: &quot;北京&quot;, &quot;city&quot;:[{&quot;name&quot;:&quot;北京&quot;,
           &quot;area&quot;:[
@@ -285,8 +285,8 @@
      area.appendChild(option2);
 
  }
-</code></pre><h2 id="单个name"><a href="#单个name" class="headerlink" title="单个name"></a>单个name</h2><h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><p>var books = [{ “name”:”《神曲》” , “author”:”但丁” ,”price”:”32”},<br>            { “name”:”《堂吉诃德》” , “author”:”塞万提斯” ,”price”:”42”},<br>            { “name”:”《格列佛游记》” , “author”:”斯维达特”,”price”:”22”},<br>            { “name”:” 《复活的我》” , “author”:”列夫托尔斯泰” ,”price”:”23”},<br>            { “name”:”《静静的顿河》” , “author”:”肖洛霍夫” ,”price”:”25”}];</p>
-<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><p> function addRow(obj) {<br>            testTbl.innerHTML=””;<br>            for (var j = 5 <em> (obj - 1); j &lt; obj </em> 5; j++) {<br>               // alert(books[j].name);</p>
+</code></pre><h2 id="单个NAME"><a href="#单个NAME" class="headerlink" title="单个NAME"></a>单个NAME</h2><h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><p>var books = [{ “name”:”《神曲》” , “author”:”但丁” ,”price”:”32”},<br>            { “name”:”《堂吉诃德》” , “author”:”塞万提斯” ,”price”:”42”},<br>            { “name”:”《格列佛游记》” , “author”:”斯维达特”,”price”:”22”},<br>            { “name”:” 《复活的我》” , “author”:”列夫托尔斯泰” ,”price”:”23”},<br>            { “name”:”《静静的顿河》” , “author”:”肖洛霍夫” ,”price”:”25”}];</p>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><p> function (obj) {<br>            testTbl.innerHTML=””;<br>            for (var j = 5 <em> (obj - 1); j &lt; obj </em> 5; j++) {<br>               // alert(books[j].name);</p>
 <pre><code>    //添加一行
 
     var newTr = testTbl.insertRow();
