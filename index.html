@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/日志/" style="font-size: 10px;">日志</a> <a href="/tags/金融库/" style="font-size: 10px;">金融库</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/HTML5/" style="font-size: 20px;">HTML5</a> <a href="/tags/日志/" style="font-size: 10px;">日志</a> <a href="/tags/金融库/" style="font-size: 10px;">金融库</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -191,6 +191,204 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-json常用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/17/json常用方法/" class="article-date">
+  	<time datetime="2016-03-17T03:32:33.000Z" itemprop="datePublished">2016-03-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/17/json常用方法/">json常用方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h2 id="三级联动问题中的多个name问题"><a href="#三级联动问题中的多个name问题" class="headerlink" title="三级联动问题中的多个name问题"></a>三级联动问题中的多个name问题</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><pre><code>var all=[
+
+      { &quot;name&quot;: &quot;北京&quot;, &quot;city&quot;:[{&quot;name&quot;:&quot;北京&quot;,
+          &quot;area&quot;:[
+              {&quot;name&quot;:&quot;东城区&quot;},  { &quot;name&quot;:&quot;西城区&quot;},{&quot;name&quot;:&quot;朝阳区&quot;}]}]},
+
+
+
+      { &quot;name&quot;: &quot;天津&quot;, &quot;city&quot;:[{&quot;name&quot;:&quot;天津&quot;,&quot;area&quot;:[
+          {&quot;name&quot;:&quot;和平区&quot;},  { &quot;name&quot;:&quot;河东区&quot;},{&quot;name&quot;:&quot;塘沽区&quot;}]}]},
+
+      { &quot;name&quot;: &quot;河北&quot;, &quot;city&quot;:[
+
+          {&quot;name&quot;:&quot;石家庄&quot;,&quot;area&quot;:[{&quot;name&quot;:&quot;长安区&quot;},{&quot;name&quot;:&quot;桥东区&quot;},{&quot;name&quot;:&quot;桥西&quot;},{&quot;name&quot;:&quot;新华区&quot;}]},
+
+          {&quot;name&quot;:&quot;唐山&quot;,&quot;area&quot;:[{&quot;name&quot;:&quot;路南区&quot;},{&quot;name&quot;:&quot;路北区&quot;},{&quot;name&quot;:&quot;古治&quot;},{&quot;name&quot;:&quot;新区&quot;}]},
+
+          {&quot;name&quot;:&quot;秦皇岛&quot;,&quot;area&quot;:[{&quot;name&quot;:&quot;长安区&quot;},{&quot;name&quot;:&quot;桥东区&quot;},{&quot;name&quot;:&quot;桥西&quot;},{&quot;name&quot;:&quot;新华区&quot;}]},
+
+          {&quot;name&quot;:&quot;邯郸&quot;,&quot;area&quot;:[{&quot;name&quot;:&quot;路南区&quot;},{&quot;name&quot;:&quot;路北区&quot;},{&quot;name&quot;:&quot;古治&quot;},{&quot;name&quot;:&quot;新区&quot;}]},
+
+      ]}];
+</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>var op;
+ window.onload=function(){
+     var sel=document.getElementById(&apos;pro&apos;);
+     for(var i=0;i&lt;all.length;i++){
+         op=document.createElement(&apos;option&apos;);
+         op.setAttribute(&apos;value&apos;,all[i].name);
+         op.innerHTML=all[i].name;
+         sel.appendChild(op);
+     }
+
+ }
+ function getPro(){
+     //获取选中项的内容
+
+     var sel=document.getElementById(&apos;pro&apos;);
+     var con=sel.selectedIndex;
+
+ city.innerHTML=&apos;&apos;;
+  var option1;
+ for(var i=0;i&lt;all[con].city.length;i++){
+     option1=document.createElement(&apos;option&apos;);
+     option1.setAttribute(&apos;value&apos;,all[con].city[i].name);
+     option1.innerHTML=all[con].city[i].name;
+     city.appendChild(option1);
+
+ }
+
+ }
+ function getCity(){
+     //获取选中项的内容
+     var sel=document.getElementById(&apos;pro&apos;);
+     var con=sel.selectedIndex;
+     var se=document.getElementById(&apos;city&apos;);
+     var co=se.selectedIndex;
+
+     area.innerHTML=&apos;&apos;;
+  var option2;
+ for(var i=0;i&lt;all[con].city[co].area.length;i++){
+     option2=document.createElement(&apos;option&apos;);
+     option2.setAttribute(&apos;value&apos;,all[con].city[co].area[i].name);
+     option2.innerHTML=all[con].city[co].area[i].name;
+     area.appendChild(option2);
+
+ }
+</code></pre><h2 id="单个name"><a href="#单个name" class="headerlink" title="单个name"></a>单个name</h2><h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><p>var books = [{ “name”:”《神曲》” , “author”:”但丁” ,”price”:”32”},<br>            { “name”:”《堂吉诃德》” , “author”:”塞万提斯” ,”price”:”42”},<br>            { “name”:”《格列佛游记》” , “author”:”斯维达特”,”price”:”22”},<br>            { “name”:” 《复活的我》” , “author”:”列夫托尔斯泰” ,”price”:”23”},<br>            { “name”:”《静静的顿河》” , “author”:”肖洛霍夫” ,”price”:”25”}];</p>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><p> function addRow(obj) {<br>            testTbl.innerHTML=””;<br>            for (var j = 5 <em> (obj - 1); j &lt; obj </em> 5; j++) {<br>               // alert(books[j].name);</p>
+<pre><code>    //添加一行
+
+    var newTr = testTbl.insertRow();
+
+    //添加两列
+    var newTd0 = newTr.insertCell();
+    newTd0.innerText =books[j].name;
+    var newTd1 = newTr.insertCell();
+        newTd1.innerText =books[j].author;
+    var newTd3 = newTr.insertCell();
+        newTd3.innerText =books[j].price;
+
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-json格式问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/15/json格式问题/" class="article-date">
+  	<time datetime="2016-03-15T11:57:42.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/15/json格式问题/">json常用方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="华丽丽的转型"><a href="#华丽丽的转型" class="headerlink" title="华丽丽的转型"></a>华丽丽的转型</h2>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/15/json格式问题/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-央行行长周小川" class="article article-type-post" itemscope itemprop="blogPost">
   
