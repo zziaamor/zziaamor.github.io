@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://zziaguan.coding.me/2016/03/17/json常用方法/index.html">
 <meta property="og:site_name" content="王钰涛的博客">
 <meta property="og:description" content="三级联动问题中的多个NAME问题">
-<meta property="og:updated_time" content="2016-03-17T03:51:43.568Z">
+<meta property="og:updated_time" content="2016-03-17T08:59:30.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSON常用方法">
 <meta name="twitter:description" content="三级联动问题中的多个NAME问题">
@@ -229,88 +229,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="三级联动问题中的多个NAME问题"><a href="#三级联动问题中的多个NAME问题" class="headerlink" title="三级联动问题中的多个NAME问题"></a>三级联动问题中的多个NAME问题</h2><a id="more"></a>
-<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><pre><code>var all=[
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> all=[</span><br><span class="line"></span><br><span class="line">  &#123; <span class="string">"name"</span>: <span class="string">"北京"</span>, <span class="string">"city"</span>:[&#123;<span class="string">"name"</span>:<span class="string">"北京"</span>,</span><br><span class="line">      <span class="string">"area"</span>:[</span><br><span class="line">          &#123;<span class="string">"name"</span>:<span class="string">"东城区"</span>&#125;,  &#123; <span class="string">"name"</span>:<span class="string">"西城区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"朝阳区"</span>&#125;]&#125;]&#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &#123; <span class="string">"name"</span>: <span class="string">"天津"</span>, <span class="string">"city"</span>:[&#123;<span class="string">"name"</span>:<span class="string">"天津"</span>,<span class="string">"area"</span>:[</span><br><span class="line">      &#123;<span class="string">"name"</span>:<span class="string">"和平区"</span>&#125;,  &#123; <span class="string">"name"</span>:<span class="string">"河东区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"塘沽区"</span>&#125;]&#125;]&#125;,</span><br><span class="line"></span><br><span class="line">  &#123; <span class="string">"name"</span>: <span class="string">"河北"</span>, <span class="string">"city"</span>:[</span><br><span class="line"></span><br><span class="line">      &#123;<span class="string">"name"</span>:<span class="string">"石家庄"</span>,<span class="string">"area"</span>:[&#123;<span class="string">"name"</span>:<span class="string">"长安区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"桥东区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"桥西"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"新华区"</span>&#125;]&#125;,</span><br><span class="line"></span><br><span class="line">      &#123;<span class="string">"name"</span>:<span class="string">"唐山"</span>,<span class="string">"area"</span>:[&#123;<span class="string">"name"</span>:<span class="string">"路南区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"路北区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"古治"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"新区"</span>&#125;]&#125;,</span><br><span class="line"></span><br><span class="line">      &#123;<span class="string">"name"</span>:<span class="string">"秦皇岛"</span>,<span class="string">"area"</span>:[&#123;<span class="string">"name"</span>:<span class="string">"长安区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"桥东区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"桥西"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"新华区"</span>&#125;]&#125;,</span><br><span class="line"></span><br><span class="line">      &#123;<span class="string">"name"</span>:<span class="string">"邯郸"</span>,<span class="string">"area"</span>:[&#123;<span class="string">"name"</span>:<span class="string">"路南区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"路北区"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"古治"</span>&#125;,&#123;<span class="string">"name"</span>:<span class="string">"新区"</span>&#125;]&#125;,</span><br><span class="line"></span><br><span class="line">  ]&#125;];</span><br></pre></td></tr></table></figure>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> op;</span><br><span class="line"> <span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">var</span> sel=<span class="built_in">document</span>.getElementById(<span class="string">'pro'</span>);</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;all.length;i++)&#123;</span><br><span class="line">         op=<span class="built_in">document</span>.createElement(<span class="string">'option'</span>);</span><br><span class="line">         op.setAttribute(<span class="string">'value'</span>,all[i].name);</span><br><span class="line">         op.innerHTML=all[i].name;</span><br><span class="line">         sel.appendChild(op);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">getPro</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="comment">//获取选中项的内容</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">var</span> sel=<span class="built_in">document</span>.getElementById(<span class="string">'pro'</span>);</span><br><span class="line">     <span class="keyword">var</span> con=sel.selectedIndex;</span><br><span class="line"></span><br><span class="line"> city.innerHTML=<span class="string">''</span>;</span><br><span class="line">  <span class="keyword">var</span> option1;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;all[con].city.length;i++)&#123;</span><br><span class="line">     option1=<span class="built_in">document</span>.createElement(<span class="string">'option'</span>);</span><br><span class="line">     option1.setAttribute(<span class="string">'value'</span>,all[con].city[i].name);</span><br><span class="line">     option1.innerHTML=all[con].city[i].name;</span><br><span class="line">     city.appendChild(option1);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">getCity</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="comment">//获取选中项的内容</span></span><br><span class="line">     <span class="keyword">var</span> sel=<span class="built_in">document</span>.getElementById(<span class="string">'pro'</span>);</span><br><span class="line">     <span class="keyword">var</span> con=sel.selectedIndex;</span><br><span class="line">     <span class="keyword">var</span> se=<span class="built_in">document</span>.getElementById(<span class="string">'city'</span>);</span><br><span class="line">     <span class="keyword">var</span> co=se.selectedIndex;</span><br><span class="line"></span><br><span class="line">     area.innerHTML=<span class="string">''</span>;</span><br><span class="line">  <span class="keyword">var</span> option2;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;all[con].city[co].area.length;i++)&#123;</span><br><span class="line">     option2=<span class="built_in">document</span>.createElement(<span class="string">'option'</span>);</span><br><span class="line">     option2.setAttribute(<span class="string">'value'</span>,all[con].city[co].area[i].name);</span><br><span class="line">     option2.innerHTML=all[con].city[co].area[i].name;</span><br><span class="line">     area.appendChild(option2);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="单个NAME"><a href="#单个NAME" class="headerlink" title="单个NAME"></a>单个NAME</h2><h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> books = [&#123; <span class="string">"name"</span>:<span class="string">"《神曲》"</span> , <span class="string">"author"</span>:<span class="string">"但丁"</span> ,<span class="string">"price"</span>:<span class="string">"32"</span>&#125;,</span><br><span class="line">            &#123; <span class="string">"name"</span>:<span class="string">"《堂吉诃德》"</span> , <span class="string">"author"</span>:<span class="string">"塞万提斯"</span> ,<span class="string">"price"</span>:<span class="string">"42"</span>&#125;,</span><br><span class="line">            &#123; <span class="string">"name"</span>:<span class="string">"《格列佛游记》"</span> , <span class="string">"author"</span>:<span class="string">"斯维达特"</span>,<span class="string">"price"</span>:<span class="string">"22"</span>&#125;,</span><br><span class="line">            &#123; <span class="string">"name"</span>:<span class="string">" 《复活的我》"</span> , <span class="string">"author"</span>:<span class="string">"列夫托尔斯泰"</span> ,<span class="string">"price"</span>:<span class="string">"23"</span>&#125;,</span><br><span class="line">            &#123; <span class="string">"name"</span>:<span class="string">"《静静的顿河》"</span> , <span class="string">"author"</span>:<span class="string">"肖洛霍夫"</span> ,<span class="string">"price"</span>:<span class="string">"25"</span>&#125;];</span><br></pre></td></tr></table></figure>
+<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    testTbl.innerHTML=<span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">5</span> * (obj - <span class="number">1</span>); j &lt; obj * <span class="number">5</span>; j++) &#123;</span><br><span class="line">       <span class="comment">// alert(books[j].name);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加一行</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> newTr = testTbl.insertRow();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//添加两列</span></span><br><span class="line">    <span class="keyword">var</span> newTd0 = newTr.insertCell();</span><br><span class="line">    newTd0.innerText =books[j].name;</span><br><span class="line">    <span class="keyword">var</span> newTd1 = newTr.insertCell();</span><br><span class="line">        newTd1.innerText =books[j].author;</span><br><span class="line">    <span class="keyword">var</span> newTd3 = newTr.insertCell();</span><br><span class="line">        newTd3.innerText =books[j].price;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      { &quot;name&quot;: &quot;北京&quot;, &quot;city&quot;:[{&quot;name&quot;:&quot;北京&quot;,
-          &quot;area&quot;:[
-              {&quot;name&quot;:&quot;东城区&quot;},  { &quot;name&quot;:&quot;西城区&quot;},{&quot;name&quot;:&quot;朝阳区&quot;}]}]},
-
-
-
-      { &quot;name&quot;: &quot;天津&quot;, &quot;city&quot;:[{&quot;name&quot;:&quot;天津&quot;,&quot;area&quot;:[
-          {&quot;name&quot;:&quot;和平区&quot;},  { &quot;name&quot;:&quot;河东区&quot;},{&quot;name&quot;:&quot;塘沽区&quot;}]}]},
-
-      { &quot;name&quot;: &quot;河北&quot;, &quot;city&quot;:[
-
-          {&quot;name&quot;:&quot;石家庄&quot;,&quot;area&quot;:[{&quot;name&quot;:&quot;长安区&quot;},{&quot;name&quot;:&quot;桥东区&quot;},{&quot;name&quot;:&quot;桥西&quot;},{&quot;name&quot;:&quot;新华区&quot;}]},
-
-          {&quot;name&quot;:&quot;唐山&quot;,&quot;area&quot;:[{&quot;name&quot;:&quot;路南区&quot;},{&quot;name&quot;:&quot;路北区&quot;},{&quot;name&quot;:&quot;古治&quot;},{&quot;name&quot;:&quot;新区&quot;}]},
-
-          {&quot;name&quot;:&quot;秦皇岛&quot;,&quot;area&quot;:[{&quot;name&quot;:&quot;长安区&quot;},{&quot;name&quot;:&quot;桥东区&quot;},{&quot;name&quot;:&quot;桥西&quot;},{&quot;name&quot;:&quot;新华区&quot;}]},
-
-          {&quot;name&quot;:&quot;邯郸&quot;,&quot;area&quot;:[{&quot;name&quot;:&quot;路南区&quot;},{&quot;name&quot;:&quot;路北区&quot;},{&quot;name&quot;:&quot;古治&quot;},{&quot;name&quot;:&quot;新区&quot;}]},
-
-      ]}];
-</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><pre><code>var op;
- window.onload=function(){
-     var sel=document.getElementById(&apos;pro&apos;);
-     for(var i=0;i&lt;all.length;i++){
-         op=document.createElement(&apos;option&apos;);
-         op.setAttribute(&apos;value&apos;,all[i].name);
-         op.innerHTML=all[i].name;
-         sel.appendChild(op);
-     }
-
- }
- function getPro(){
-     //获取选中项的内容
-
-     var sel=document.getElementById(&apos;pro&apos;);
-     var con=sel.selectedIndex;
-
- city.innerHTML=&apos;&apos;;
-  var option1;
- for(var i=0;i&lt;all[con].city.length;i++){
-     option1=document.createElement(&apos;option&apos;);
-     option1.setAttribute(&apos;value&apos;,all[con].city[i].name);
-     option1.innerHTML=all[con].city[i].name;
-     city.appendChild(option1);
-
- }
-
- }
- function getCity(){
-     //获取选中项的内容
-     var sel=document.getElementById(&apos;pro&apos;);
-     var con=sel.selectedIndex;
-     var se=document.getElementById(&apos;city&apos;);
-     var co=se.selectedIndex;
-
-     area.innerHTML=&apos;&apos;;
-  var option2;
- for(var i=0;i&lt;all[con].city[co].area.length;i++){
-     option2=document.createElement(&apos;option&apos;);
-     option2.setAttribute(&apos;value&apos;,all[con].city[co].area[i].name);
-     option2.innerHTML=all[con].city[co].area[i].name;
-     area.appendChild(option2);
-
- }
-</code></pre><h2 id="单个NAME"><a href="#单个NAME" class="headerlink" title="单个NAME"></a>单个NAME</h2><h3 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h3><p>var books = [{ “name”:”《神曲》” , “author”:”但丁” ,”price”:”32”},<br>            { “name”:”《堂吉诃德》” , “author”:”塞万提斯” ,”price”:”42”},<br>            { “name”:”《格列佛游记》” , “author”:”斯维达特”,”price”:”22”},<br>            { “name”:” 《复活的我》” , “author”:”列夫托尔斯泰” ,”price”:”23”},<br>            { “name”:”《静静的顿河》” , “author”:”肖洛霍夫” ,”price”:”25”}];</p>
-<h3 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h3><p> function (obj) {<br>            testTbl.innerHTML=””;<br>            for (var j = 5 <em> (obj - 1); j &lt; obj </em> 5; j++) {<br>               // alert(books[j].name);</p>
-<pre><code>    //添加一行
-
-    var newTr = testTbl.insertRow();
-
-    //添加两列
-    var newTd0 = newTr.insertCell();
-    newTd0.innerText =books[j].name;
-    var newTd1 = newTr.insertCell();
-        newTd1.innerText =books[j].author;
-    var newTd3 = newTr.insertCell();
-        newTd3.innerText =books[j].price;
-
-}
-</code></pre>
       
     </div>
     
