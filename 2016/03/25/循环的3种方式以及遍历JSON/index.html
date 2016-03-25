@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>js匹配中去除所有空格 | 王钰涛的博客</title>
+  <title>循环的3种方式以及遍历JSON | 王钰涛的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="trim()仅仅是去除字符串左右两边的空格">
+  <meta name="description" content="json数组在Jquery中用each遍历添加">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js匹配中去除所有空格">
-<meta property="og:url" content="http://wangyutao.top/2016/03/17/js匹配中去除所有空格/index.html">
+<meta property="og:title" content="循环的3种方式以及遍历JSON">
+<meta property="og:url" content="http://wangyutao.top/2016/03/25/循环的3种方式以及遍历JSON/index.html">
 <meta property="og:site_name" content="王钰涛的博客">
-<meta property="og:description" content="trim()仅仅是去除字符串左右两边的空格">
-<meta property="og:updated_time" content="2016-03-17T10:26:07.969Z">
+<meta property="og:description" content="json数组在Jquery中用each遍历添加">
+<meta property="og:updated_time" content="2016-03-25T08:32:56.602Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js匹配中去除所有空格">
-<meta name="twitter:description" content="trim()仅仅是去除字符串左右两边的空格">
+<meta name="twitter:title" content="循环的3种方式以及遍历JSON">
+<meta name="twitter:description" content="json数组在Jquery中用each遍历添加">
   
     <link rel="alternative" href="/atom.xml" title="王钰涛的博客" type="application/atom+xml">
   
@@ -201,11 +201,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-js匹配中去除所有空格" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-循环的3种方式以及遍历JSON" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/17/js匹配中去除所有空格/" class="article-date">
-  	<time datetime="2016-03-17T10:18:12.000Z" itemprop="datePublished">2016-03-17</time>
+      <a href="/2016/03/25/循环的3种方式以及遍历JSON/" class="article-date">
+  	<time datetime="2016-03-25T08:24:46.801Z" itemprop="datePublished">2016-03-25</time>
 </a>
     </div>
   
@@ -218,7 +218,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js匹配中去除所有空格
+      循环的3种方式以及遍历JSON
     </h1>
   
 
@@ -238,8 +238,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="trim-仅仅是去除字符串左右两边的空格"><a href="#trim-仅仅是去除字符串左右两边的空格" class="headerlink" title="trim()仅仅是去除字符串左右两边的空格"></a>trim()仅仅是去除字符串左右两边的空格</h1><a id="more"></a>
-<h2 id="具体代码如下"><a href="#具体代码如下" class="headerlink" title="具体代码如下"></a>具体代码如下</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="built_in">document</span>.getElementById(<span class="string">'input_search'</span>).value;<span class="comment">//获取输入值</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span>   reg   =   <span class="regexp">/\s/g</span>;                                </span><br><span class="line">            <span class="keyword">var</span>   text1   =   text.replace(reg,   <span class="string">""</span>);            <span class="comment">//去除所有的空格</span></span><br><span class="line">            alert(text1);</span><br></pre></td></tr></table></figure>
+        <h1 id="json数组在Jquery中用each遍历添加"><a href="#json数组在Jquery中用each遍历添加" class="headerlink" title="json数组在Jquery中用each遍历添加"></a>json数组在Jquery中用each遍历添加</h1><a id="more"></a>
+<p>for</p>
+<p>for ( in )</p>
+<blockquote>
+<p>.forEach()<br>foreach在Jquery中遍历json数组的使用</p>
+<p>var json=[{<br>‘pro’:’江苏’,’city’:[‘南京’,’苏州’,’无锡’]},<br>{‘pro’:’广东’, ‘city’:[‘广州’,’东莞’]},<br>{‘pro’:’山东’,’city’:[‘济南’,’日照’,’烟台’]}];<br>(function(){</p>
+<p>.each(json,function(index,element)) var opt1=json[index].pro; $(‘#pro’).append(‘‘+json[index].pro’‘)</p>
+</blockquote>
+<p>})</p>
+
       
     </div>
     
@@ -248,18 +256,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/25/循环的3种方式以及遍历JSON/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          循环的3种方式以及遍历JSON
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/17/json常用方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JSON常用方法</div>
+    <a href="/2016/03/17/js匹配中去除所有空格/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js匹配中去除所有空格</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -275,7 +274,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="js匹配中去除所有空格" data-title="js匹配中去除所有空格" data-url="http://wangyutao.top/2016/03/17/js匹配中去除所有空格/"></div>
+	<div class="ds-thread" data-thread-key="循环的3种方式以及遍历JSON" data-title="循环的3种方式以及遍历JSON" data-url="http://wangyutao.top/2016/03/25/循环的3种方式以及遍历JSON/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
